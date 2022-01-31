@@ -8,7 +8,7 @@ module Base16
   def self.from_str str, include_leading_zeroes = true
     raise ArgumentError, 'Value passed is not a String.' unless str.is_a?(String)
     raise ArgumentError, 'Value passed is not binary.' unless str.encoding == Encoding::BINARY
-    if bin.empty?
+    if str.empty?
       return from_int(0) 
     else
       str.unpack('H*')[0]
